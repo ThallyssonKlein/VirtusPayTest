@@ -12,10 +12,3 @@ export async function FindOne(dragonId){
         return null;
     }
 }
-
-export async function EditAttribute(dragonId, attrName, newValue){
-    let obj = {}
-    obj[attrName] = newValue
-    const result = await API.put('/api/v1/dragon/' + dragonId, obj);
-    return result.ok;
-}

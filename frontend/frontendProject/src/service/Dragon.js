@@ -4,11 +4,6 @@ import { FindAll as FindAllR,
          FindOne as FindOneR,
          New as NewR} from '../repository/Dragon';
 
-export async function EditAttribute(dragonId, attrName, newValue){
-    const result = await EditAttributeR(dragonId, attrName, newValue);
-    return result;
-}
-
 export async function FindOne(dragonId){
     const result = await FindOneR(dragonId);
     result.createdAt = new Date(result.createdAt).toLocaleString();

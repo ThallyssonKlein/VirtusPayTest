@@ -16,7 +16,7 @@ export default function Message(props){
     }
     if(visible){
         return <div style={styles.container}>
-            <p>{props.text}<span onPress={_ => setVisible(false)}><GrClose/></span></p>
+            <p>{props.text}<span style={{marginLeft : 10}} onClick={_ => setVisible(false)}><GrClose/></span></p>
         </div>
     }else{
         return <div/>

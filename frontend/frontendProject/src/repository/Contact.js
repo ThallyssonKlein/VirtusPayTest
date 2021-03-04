@@ -22,3 +22,10 @@ export async function New(name, phone, email){
     const result = await API.post('/api/v1/contact/', {name, phone, email});
     return result.ok;
 }
+
+export async function EditAttribute(contactId, attrName, newValue){
+    let obj = {}
+    obj[attrName] = newValue
+    const result = await API.patch('/api/v1/contact/' + contactId + '/', obj);
+    return result.ok;
+}
