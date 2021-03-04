@@ -12,4 +12,4 @@ RUN pipenv run python manage.py makemigrations core
 RUN pipenv run python manage.py migrate
 RUN pipenv run python manage.py migrate core
 RUN pipenv run python manage.py createsuperuser --noinput
-CMD ["pipenv", "run", "python", "manage.py", "runserver 0.0.0.0:8000"]
+CMD pipenv run python manage.py runserver 0.0.0.0:8000

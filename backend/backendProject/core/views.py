@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from rest_framework import viewsets
 from .serializers import ContactSerializer, AddressSerializer
+from .models import Contact, Address
 # Create your views here.
 
 class ContactViewSet(viewsets.ModelViewSet):

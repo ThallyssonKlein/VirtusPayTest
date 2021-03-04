@@ -6,7 +6,7 @@ from django.contrib import admin
 class Contact(models.Model):
     name = models.CharField(max_length=50, blank=False, null=False)
     phone = PhoneField(blank=False, null=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    createdAt = models.DateTimeField(auto_now_add=True)
     email = models.EmailField(max_length=254)
 
 class Address(models.Model):

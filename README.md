@@ -8,4 +8,6 @@ sudo docker-compose up -d
 ```
 
 ## Como usar
-A API roda na porta 8000, e você pode acessar a doc para ver as rotas em http://localhost:8000/doc
+API: http://0.0.0.0:8000/api/v1
+DOC da API: http://0.0.0.0:8000/doc
+Frontend: http://0.0.0.0:3000

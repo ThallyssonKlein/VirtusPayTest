@@ -7,3 +7,9 @@ services:
     restart: on-failure
     ports:
       - 8000:8000
+  # frontend:
+  #   container_name: frontend
+  #   build: ./frontend
+  #   restart: on-failure
+  #   ports:
+  #     - 3000:3000
