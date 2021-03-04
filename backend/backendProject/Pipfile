@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+djangorestframework = "*"
+pymysql = "*"
+django-phone-field = "*"
+django-rest-swagger = "*"
+django-cors-headers = "*"
+
+[requires]
+python_version = "3.7"
