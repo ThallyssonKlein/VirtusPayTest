@@ -1,6 +1,9 @@
 import { FindAll as FindAllR,
          DeleteOne as DeleteOneR,
-         New as NewR} from '../repository/Contact';
+         New as NewR,
+         EditAttribute as EditAttributeR } from '../repository/Contact';
+
+import { ValidateName, ValidateEmail } from './validator/Contact';
 
 export async function FindAll(){
     let result = await FindAllR();
@@ -19,5 +22,24 @@ export async function DeleteOne(contactId){
 
 export async function New(name, phone, email){
     const result = await NewR(name, phone, email);
+    return result;
+}
+
+export async function EditAttribute(contactId, attrName, newValue){
+    switch(attrName){
+        case "name":
+            if(!ValidateName(newValue)){
+                alert("Preencha o nome!");
+                return null;
+            }
+            break;
+        case "email":
+            if(!ValidateEmail(newValue)){
+                alert("Digite um email valido para salvar! (exemplo@exemplo.com)");
+                return null;
+            }
+            break;
+    }
+    const result = await EditAttributeR(contactId, attrName, newValue);
     return result;
 }

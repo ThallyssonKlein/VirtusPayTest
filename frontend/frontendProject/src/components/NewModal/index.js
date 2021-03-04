@@ -7,8 +7,9 @@ import { New } from '../../service/Contact';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
+import { ValidateName, ValidateEmail } from '../../service/validator/Contact';
+
 export default function NewModal(props){
-    const pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);  
   
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -19,7 +20,7 @@ export default function NewModal(props){
     }
 
     const save = async _ => {
-        if(pattern.test(email)){
+        if(ValidateName(name) && ValidateEmail(email)){
             const result = await New(name, phone, email);
             if(!result){
                 alert("Erro ao salvar!");
@@ -27,7 +28,11 @@ export default function NewModal(props){
             closeModal();
             window.location.reload();
         }else{
-            alert("Digite um email valido para salvar!");
+            if(!ValidateName(name)){
+                alert("Preencha o nome!");
+            }else{
+                alert("Digite um email valido para salvar! (exemplo@exemplo.com)");
+            }
         }
     }
 
