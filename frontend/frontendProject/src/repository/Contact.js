@@ -29,3 +29,12 @@ export async function EditAttribute(contactId, attrName, newValue){
     const result = await API.patch('/api/v1/contact/' + contactId + '/', obj);
     return result.ok;
 }
+
+export async function FindOne(contactId){
+    const result = await API.get('/api/v1/contact/' + contactId + '/');
+    if(result.ok){
+        return result.data;
+    }else{
+        return null;
+    }
+}

@@ -1,7 +1,8 @@
 import { FindAll as FindAllR,
          DeleteOne as DeleteOneR,
          New as NewR,
-         EditAttribute as EditAttributeR } from '../repository/Contact';
+         EditAttribute as EditAttributeR,
+         FindOne as FindOneR } from '../repository/Contact';
 
 import { ValidateName, ValidateEmail } from './validator/Contact';
 
@@ -41,5 +42,11 @@ export async function EditAttribute(contactId, attrName, newValue){
             break;
     }
     const result = await EditAttributeR(contactId, attrName, newValue);
+    return result;
+}
+
+export async function FindOne(contactId){
+    const result = await FindOneR(contactId);
+    result.createdAt = new Date(result.createdAt).toLocaleString();
     return result;
 }

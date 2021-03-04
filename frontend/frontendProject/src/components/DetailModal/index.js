@@ -31,8 +31,9 @@ export default function DetailModal(props){
                             </div>
                             <p><b>Id:</b> {detalhes.id}</p>
                             <p><b>Nome:</b> {detalhes.name}</p>
-                            <p><b>Tipo:</b> {detalhes.type}</p>
+                            <p><b>Telefone:</b> {detalhes.phone}</p>
                             <p><b>Criado Em:</b> {detalhes.createdAt}</p>
+                            <p><b>Email:</b> {detalhes.email}</p>
                         </div> : "Carregando detalhes..."}        
                 </Modal>
 }
