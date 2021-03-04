@@ -1,6 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import { TrContext } from '../../contexts/TrContext';
+import { TrListContext } from '../../contexts/TrListContext';
 
 import Modal from 'react-modal';
 
@@ -13,6 +14,7 @@ import NewAddressModal from '../NewAddressModal';
 export default function DetailModal(props){
     const [detalhes, setDetalhes] = useState(null);
     const { viewSelectedOne } = useContext(TrContext);
+    const { setAddresses } = useContext(TrListContext);
     const [newAddressModalVisible, setNewAddressModalVisible] = useState(false);
 
     const afterOpenModal = async _ => {
@@ -23,6 +25,12 @@ export default function DetailModal(props){
     const closeModal = _ => {
         props.setDetailsVisible(false);
     }
+
+    useEffect(_ => {
+        if(detalhes){
+            setAddresses(detalhes.addresses);
+        }
+    }, [detalhes]);
 
     return <div>
             <Modal  isOpen={props.detailsVisible}
@@ -42,9 +50,9 @@ export default function DetailModal(props){
 
                                 <hr/>
 
-                                <List addresses={detalhes.addresses}/>
+                                <List/>
 
-                                <div style={{flexDirection: "row"}}>
+                                <div style={{flexDirection: "row", marginTop: 10}}>
                                     <button className={styles.button}
                                             onClick={_ => setNewAddressModalVisible(true)}>ADICIONAR</button>
                                 </div>

@@ -12,7 +12,7 @@ export async function New(cep, address, contactId){
 
     if(!resultFromSearch){
         const resultFromSave = await NewR(cep, address, contactId);
-        return resultFromSave;
+        return resultFromSave.data;
     }
 
     return resultFromSearch;

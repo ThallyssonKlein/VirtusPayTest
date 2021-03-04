@@ -21,5 +21,5 @@ export async function FindOne(cep){
 export async function New(cep, address, contactId){
     const result = await API.post('/api/v1/address/', {cep, address, contact : contactId});
     
-    return result.ok;
+    return result;
 }

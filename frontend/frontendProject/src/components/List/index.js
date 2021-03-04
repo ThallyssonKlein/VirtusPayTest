@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './table.module.css';
 import Tr from './Tr';
 
+import { TrListContext } from '../../contexts/TrListContext';
+
 export default function List(props){
+    const { addresses } = useContext(TrListContext);
+
+    useEffect(_ => {
+        console.log("-----------");
+        console.log(typeof addresses);
+        console.log(addresses);
+    }, [addresses]);
 
     return <table className={styles.table}>
             <thead>
@@ -13,7 +22,7 @@ export default function List(props){
                 </tr>
             </thead>
             {
-                props.addresses.map(address => <Tr address={address}/>)
+                addresses.map(address => <Tr address={address}/>)
             }
         </table>
 }
