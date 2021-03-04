@@ -4,8 +4,13 @@ const API = create({
     baseURL : "http://localhost:8000"
 });
 
-export async function FindAll(){
-    const result = await API.get('/api/v1/address/');
+export async function DeleteOne(cep){
+    const result = await API.delete('/api/v1/address/' + cep + "/");
+    return result.ok;
+}
+
+export async function FindOne(cep){
+    const result = await API.get('/api/v1/address/' + cep + '/');
     if(result.ok){
         return result.data;
     }else{
@@ -13,7 +18,10 @@ export async function FindAll(){
     }
 }
 
-export async function DeleteOne(addressId){
-    const result = await API.delete('/api/v1/address/' + addressId);
+export async function New(cep, address, contactId){
+    const result = await API.post('/api/v1/address/', {cep, address, contact : {
+        id : contactId
+    }});
+    
     return result.ok;
 }

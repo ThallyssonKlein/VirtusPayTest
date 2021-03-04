@@ -12,7 +12,7 @@ class Contact(models.Model):
 class Address(models.Model):
     address = models.CharField(max_length=254)
     cep = models.IntegerField(primary_key=True)
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
+    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, related_name="addresses")
 
 admin.site.register(Contact)
 admin.site.register(Address)
