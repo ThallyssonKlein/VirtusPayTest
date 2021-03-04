@@ -52,6 +52,6 @@ export default function DetailModal(props){
             </Modal>
             <NewAddressModal isVisible={newAddressModalVisible}
                              setNewAddressModalVisible={setNewAddressModalVisible}
-                             contactId={detalhes.id}/>
+                             contactId={(detalhes) ? detalhes.id : undefined}/>
     </div>
 }

@@ -11,7 +11,7 @@ export async function DeleteOne(cep){
 
 export async function FindOne(cep){
     const result = await API.get('/api/v1/address/' + cep + '/');
-    if(result.ok){
+    if(result.status !== 404){
         return result.data;
     }else{
         return null;
@@ -19,9 +19,7 @@ export async function FindOne(cep){
 }
 
 export async function New(cep, address, contactId){
-    const result = await API.post('/api/v1/address/', {cep, address, contact : {
-        id : contactId
-    }});
+    const result = await API.post('/api/v1/address/', {cep, address, contact : contactId});
     
     return result.ok;
 }

@@ -7,7 +7,7 @@ export async function DeleteOne(cep){
     return result;
 }
 
-export async function New(address, cep, contactId){
+export async function New(cep, address, contactId){
     const resultFromSearch = await FindOne(cep);
 
     if(!resultFromSearch){
