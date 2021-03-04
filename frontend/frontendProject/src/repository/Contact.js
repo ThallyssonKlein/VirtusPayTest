@@ -14,7 +14,7 @@ export async function FindAll(){
 }
 
 export async function DeleteOne(contactId){
-    const result = await API.delete('/api/v1/contact/' + contactId);
+    const result = await API.delete('/api/v1/contact/' + contactId + '/');
     return result.ok;
 }
 

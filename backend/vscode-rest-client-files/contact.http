@@ -12,3 +12,6 @@ content-type: application/json
 
 ###
 GET http://0.0.0.0:8000/api/v1/contact
+
+###
+DELETE http://localhost:8000/api/v1/contact/2/

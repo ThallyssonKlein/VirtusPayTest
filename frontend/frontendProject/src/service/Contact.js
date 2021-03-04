@@ -14,8 +14,7 @@ export async function FindAll(){
 }
 
 export async function DeleteOne(contactId){
-    const result = await DeleteOneR(contactId);
-    return result;
+    return await DeleteOneR(contactId);;
 }
 
 export async function New(name, phone, email){

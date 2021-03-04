@@ -22,7 +22,7 @@ export default function TrProvider({children}){
              if(result){
                 objDeleteds[key] = true;
              }else{
-                    addAMessage("Erro ao deletar!");
+                 addAMessage("Erro ao deletar!");
              }
         }
         setSelecteds(objSelecteds);
