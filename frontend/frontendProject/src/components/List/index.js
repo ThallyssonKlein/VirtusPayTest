@@ -4,14 +4,8 @@ import Tr from './Tr';
 
 import { TrListContext } from '../../contexts/TrListContext';
 
-export default function List(props){
+export default function List(){
     const { addresses } = useContext(TrListContext);
-
-    useEffect(_ => {
-        console.log("-----------");
-        console.log(typeof addresses);
-        console.log(addresses);
-    }, [addresses]);
 
     return <table className={styles.table}>
             <thead>

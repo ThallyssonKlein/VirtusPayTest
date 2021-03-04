@@ -27,6 +27,8 @@ export default function NewAddressModal(props){
             alert("Falha ao salvar o endereço!");
         }else{
             setAddresses([...addresses, resultFromNewAddress]);
+            setCep("");
+            setEndereco("");
             closeModal();
         }
     }
