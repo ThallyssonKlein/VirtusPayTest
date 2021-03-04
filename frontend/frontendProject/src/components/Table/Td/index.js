@@ -8,18 +8,18 @@ export default function Td({isInEditMode,
                             setEditMode,
                             contact,
                             attr,
-                            editingDragonAndAttr,
-                            setEditingDragonAndAttr}){
-    const [text, setText] = useState(dragon[attr]);
-    const [tdValue, setTdValue] = useState(dragon[attr]);
+                            editingContactAndAttr,
+                            setEditingContactAndAttr}){
+    const [text, setText] = useState(contact[attr]);
+    const [tdValue, setTdValue] = useState(contact[attr]);
     const {addAMessage} = useContext(ErrorMessageContext);
 
-    if(isInEditMode && (editingDragonAndAttr && editingDragonAndAttr.id === dragon.id && editingDragonAndAttr.attr === attr)){
+    if(isInEditMode && (editingContactAndAttr && editingContactAndAttr.id === contact.id && editingContactAndAttr.attr === attr)){
         return <input value={text} onChange={e => setText(e.target.value)} onKeyDown={async e => {
             if(e.key === 'Enter'){
-                const result = await EditAttribute(dragon.id, attr, text);
+                const result = await EditAttribute(contact.id, attr, text);
                 setEditMode(false);
-                setEditingDragonAndAttr({});
+                setEditingContactAndAttr({});
                 if(!result){
                     addAMessage("Falha ao salvar");
                 }else{
@@ -32,7 +32,7 @@ export default function Td({isInEditMode,
                 <div style={{display : 'flex', flexDirection : 'row', justifyContent : 'space-between'}}>
                     {tdValue}
                     {(attr !== "createdAt" && attr !== "id") &&  <button onClick={_ => {
-                        setEditingDragonAndAttr({id : dragon.id, attr});
+                        setEditingContactAndAttr({id : contact.id, attr});
                         setEditMode(true);
                     }}>
                         <HiPencilAlt/>

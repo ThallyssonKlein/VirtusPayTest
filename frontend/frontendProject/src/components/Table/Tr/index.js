@@ -5,7 +5,7 @@ import styles from '../table.module.css';
 import Td from '../Td';
 import { isMobile } from "react-device-detect";
 
-export default function Tr({contact, isInEditMode, setEditMode, editingContactAttr, setEditingContactAttr}){
+export default function Tr({contact, isInEditMode, setEditMode, editingContactAndAttr, setEditingContactAndAttr}){
     const { selecteds, setSelecteds, deleteds} = useContext(TrContext);
 
     if(deleteds[contact.id]){
@@ -28,34 +28,34 @@ export default function Tr({contact, isInEditMode, setEditMode, editingContactAt
             </td>
             {!isMobile && <Td isInEditMode={isInEditMode}
                 setEditMode={setEditMode}
-                editingContactAttr={editingContactAttr}
-                setEditingContactAttr={setEditingContactAttr}
+                editingContactAndAttr={editingContactAndAttr}
+                setEditingContactAndAttr={setEditingContactAndAttr}
                 attr={"id"}
-                dragon={contact}/>}
+                contact={contact}/>}
             <Td isInEditMode={isInEditMode}
                 setEditMode={setEditMode}
-                editingContactAttr={editingContactAtt}
-                setEditingContactAttr={setEditingContactAttr}
+                editingContactAndAttr={editingContactAndAttr}
+                setEditingContactAndAttr={setEditingContactAndAttr}
                 attr={"name"}
-                dragon={contact}/>
+                contact={contact}/>
             <Td isInEditMode={isInEditMode}
                 setEditMode={setEditMode}
-                editingContactAttr={editingContactAtt}
-                setEditingContactAttr={setEditingContactAttr}
+                editingContactAndAttr={editingContactAndAttr}
+                setEditingContactAndAttr={setEditingContactAndAttr}
                 attr={"phone"}
-                dragon={contact}/>
+                contact={contact}/>
             {!isMobile && <Td isInEditMode={isInEditMode}
                 setEditMode={setEditMode}
-                editingDragonAndAttr={editingContactAttr}
-                setEditingDragonAndAttr={setEditingContactAttr}
+                editingContactAndAttr={editingContactAndAttr}
+                setEditingContactAndAttr={setEditingContactAndAttr}
                 attr={"createdAt"}
-                dragon={contact}/>}
+                contact={contact}/>}
             <Td isInEditMode={isInEditMode}
                 setEditMode={setEditMode}
-                editingContactAttr={editingContactAtt}
-                setEditingContactAttr={setEditingContactAttr}
+                editingContactAndAttr={editingContactAndAttr}
+                setEditingContactAndAttr={setEditingContactAndAttr}
                 attr={"email"}
-                dragon={contact}/>
+                contact={contact}/>
         </tr>
     }
 }

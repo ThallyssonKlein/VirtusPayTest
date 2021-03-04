@@ -5,7 +5,7 @@ import { isMobile } from "react-device-detect";
 
 export default function Table(props){
     const [isInEditMode, setEditMode] = useState(false);
-    const [editingContactAttr, setEditingContactAttr] = useState(null);
+    const [editingContactAndAttr, setEditingContactAndAttr] = useState(null);
 
     window.addEventListener('resize', _ => window.location.reload());
 
@@ -24,8 +24,8 @@ export default function Table(props){
                 props.contacts.map(contact => <Tr contact={contact}
                     isInEditMode={isInEditMode}
                     setEditMode={setEditMode}
-                    editingContactAttr={editingContactAttr}
-                    setEditingContactAttr={setEditingContactAttr}/>)
+                    editingContactAndAttr={editingContactAndAttr}
+                    setEditingContactAndAttr={setEditingContactAndAttr}/>)
             }
         </table>
 }

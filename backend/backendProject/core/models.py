@@ -11,7 +11,7 @@ class Contact(models.Model):
 
 class Address(models.Model):
     address = models.CharField(max_length=254)
-    cep = models.IntegerField(max_length=8)
+    cep = models.IntegerField(primary_key=True)
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
 
 admin.site.register(Contact)

@@ -9,3 +9,6 @@ content-type: application/json
     "phone": 5551996660181,
     "email": "contact@example.com"
 }
+
+###
+GET http://0.0.0.0:8000/api/v1/contact

@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 
-import { DeleteOne } from '../service/Dragon';
+import { DeleteOne } from '../service/Contact';
 
 import { ErrorMessageContext } from './ErrorMessageContext';
 

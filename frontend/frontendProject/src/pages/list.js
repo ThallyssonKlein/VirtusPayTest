@@ -6,8 +6,6 @@ import Table from '../components/Table';
 
 import { ErrorMessageContext } from '../contexts/ErrorMessageContext';
 
-import { getSession } from 'next-auth/client';
-
 import NavBar from '../components/NavBar';
 import ButtonsBar from '../components/ButtonsBar';
 
@@ -43,21 +41,11 @@ function List(){
 
                    <ButtonsBar setDetailsVisible={setDetailsVisible} setNewVisible={setNewVisible}/>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
-                        {(contacts) ? <Table contacts={contacts}/> : "Carregando Dragões...."}
+                        {(contacts) ? <Table contacts={contacts}/> : "Carregando Contatos...."}
                     </div>
                 </section>
             </div>
     );
-}
-
-List.getInitialProps = async ctx => {
-    console.log(ctx);
-    const session = await getSession(ctx);
-    if(!session){
-        ctx.res.writeHead(302, { Location: "/signin" }).end()
-        return {}
-    }
-    return {}
 }
 
 export default List;

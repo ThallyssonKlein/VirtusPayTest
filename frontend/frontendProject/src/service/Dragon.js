@@ -14,8 +14,3 @@ export async function FindOne(dragonId){
     result.createdAt = new Date(result.createdAt).toLocaleString();
     return result;
 }
-
-export async function New(name, type){
-    const result = await NewR(name, type);
-    return result;
-}

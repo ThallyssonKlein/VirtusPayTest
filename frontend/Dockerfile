@@ -1,7 +1,8 @@
-FROM node:13-alpine
+FROM node:15-alpine
 EXPOSE 3000
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY frontendProject/package.json /app/package.json
-RUN npm install
-CMD ["npm", "run", "dev"]
+COPY frontendProject/ .
+RUN yarn
+CMD ["yarn", "dev"]

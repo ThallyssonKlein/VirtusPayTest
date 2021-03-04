@@ -1,11 +1,24 @@
 import { FindAll as FindAllR,
-         DeleteOne as DeleteOneR } from '../repository/Contact';
+         DeleteOne as DeleteOneR,
+         New as NewR} from '../repository/Contact';
 
 export async function FindAll(){
-    return await FindAllR();
+    let result = await FindAllR();
+    if(result) {
+        result = result.map(obj => {
+            obj.createdAt = new Date(obj.createdAt).toLocaleString();
+            return obj;
+        });
+    }
+    return result;
 }
 
-export async function DeleteOne(dragonId){
-    const result = await DeleteOneR(dragonId);
+export async function DeleteOne(contactId){
+    const result = await DeleteOneR(contactId);
+    return result;
+}
+
+export async function New(name, phone, email){
+    const result = await NewR(name, phone, email);
     return result;
 }
