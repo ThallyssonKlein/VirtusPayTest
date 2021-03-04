@@ -33,7 +33,7 @@ export default function NewModal(props){
 
     return(
         <Modal isOpen={props.newVisible}
-               contentLabel="Novo Dragão"
+               contentLabel="Novo Contato"
                closeTimeoutMS={150}>
                     <div className={styles.row}>
                         <button onClick={_ => closeModal()}>X</button>

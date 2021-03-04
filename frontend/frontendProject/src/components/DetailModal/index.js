@@ -22,7 +22,7 @@ export default function DetailModal(props){
 
     return <Modal isOpen={props.detailsVisible}
                   onAfterOpen={afterOpenModal}
-                  contentLabel="Detalhes do Dragão"
+                  contentLabel="Detalhes do Contato"
                   closeTimeoutMS={150}>
 
                         {(detalhes) ? <div className={styles.container}>

@@ -9,4 +9,4 @@ class ContactSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = ['__all__']
+        fields = ['cep', 'address']
