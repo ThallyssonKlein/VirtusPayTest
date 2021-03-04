@@ -11,3 +11,4 @@ sudo docker-compose up -d
 API: http://0.0.0.0:8000/api/v1
 DOC da API: http://0.0.0.0:8000/doc
 Frontend: http://0.0.0.0:3000
+Interface de admin do banco de dados: http://0.0.0.0:8000/admin (username=example, password=password)

@@ -12,6 +12,7 @@ import ButtonsBar from '../components/ButtonsBar';
 import DetailModal from '../components/DetailModal';
 import NewModal from '../components/NewModal';
 import Head from 'next/head';
+
 function List(){
     const {messages, addAMessage} = useContext(ErrorMessageContext);
     const [contacts, setContacts] = useState(false);

@@ -1,10 +1,13 @@
 import ErrorMessageProvider from '../contexts/ErrorMessageContext';
 import TrProvider from '../contexts/TrContext';
+import TrListProvider from '../contexts/TrListContext';
 
 function MyApp({ Component, pageProps }) {
   return <ErrorMessageProvider>
             <TrProvider>
-              <Component {...pageProps} />
+              <TrListProvider>
+                <Component {...pageProps} />
+              </TrListProvider>
             </TrProvider>
         </ErrorMessageProvider>
 }

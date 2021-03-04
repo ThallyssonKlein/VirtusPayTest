@@ -10,9 +10,9 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254)
 
 class Address(models.Model):
-    address = models.CharField(max_length=254)
+    address = models.CharField(max_length=254, blank=True, null=False, default='')
     cep = models.IntegerField(primary_key=True)
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
+    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, related_name="addresses", null=False, blank=False)
 
 admin.site.register(Contact)
 admin.site.register(Address)

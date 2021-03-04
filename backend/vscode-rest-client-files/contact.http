@@ -15,3 +15,19 @@ GET http://0.0.0.0:8000/api/v1/contact
 
 ###
 DELETE http://localhost:8000/api/v1/contact/2/
+
+###
+GET http://viacep.com.br/ws/66666666/json/
+
+###
+POST http://0.0.0.0:8000/api/v1/address/
+content-type: application/json
+
+{
+    "address": "Rua Goias, 874",
+    "cep": 94955182,
+    "contact": 1
+}
+
+###
+GET http://0.0.0.0:8000/api/v1/address/
